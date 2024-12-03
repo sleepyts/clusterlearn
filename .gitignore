@@ -1,0 +1,16 @@
+idea
+.vscode/
+target/
+bin/
+
+*.iml
+ 
+!main.iml
+ 
+/test
+ 
+*.class
+ 
+demo/*.txt
+ 
+demo/**/*.txt
