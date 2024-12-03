@@ -17,31 +17,6 @@ import cn.hutool.core.util.RandomUtil;
  * 聚类后还可通过分析聚类的结果找到最佳的K值（使用肘部法则，计算轮廓系数等等）
  */
 public class KMeans {
-    /**
-     * 数据点
-     * 在真正聚类是改数据可能是经过处理后且能代表数据特征的数据
-     * 不一定是点
-     */
-    static class Point implements Cloneable {
-        double x, y; // 假设是二维数据点
-        int clusterId; // 所属簇的标识
-
-        public Point(double x, double y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        // 计算当前点与另一个点的欧几里得距离
-        public double distance(Point p) {
-            return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
-        }
-
-        @Override
-        protected Point clone() {
-            return new Point(x, y);
-        }
-    }
-
     private int k; // 簇的数量
     private List<Point> points; // 数据点列表
     private List<Point> centroids; // 簇的中心点（质心）
@@ -246,5 +221,10 @@ public class KMeans {
         KMeans kMeans = new KMeans(k, dataPoints); // 假设要分为 3 个簇
         kMeans.run(); // 运行 KMeans 算法
         kMeans.printResults(); // 打印结果
+    }
+
+    public void setNumClusters(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setNumClusters'");
     }
 }
